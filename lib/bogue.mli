@@ -1109,7 +1109,10 @@ A [Label] is a widget for displaying a single line of text.
  *)
 module Label : sig
   type t
-  type font
+  type font = 
+    | File of string
+    | Font of Tsdl_ttf.Ttf.font
+  
   type style
 
   val create : ?size:int -> ?font:font -> ?style:style ->
